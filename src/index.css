@@ -1,0 +1,18 @@
+body {
+  margin: 0;
+  padding: 3rem 0;
+  font-family: sans-serif;
+  background: #dedede;
+}
+
+.voting p {
+  margin: 0;
+}
+
+.voting svg {
+  cursor: pointer;
+}
+
+h4 small {
+  margin-left: 1rem;
+}
