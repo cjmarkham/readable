@@ -50,12 +50,10 @@ const mapStateToProps = () => {
   return {};
 }
 
-const mapDispatchToProps = dispatch => {
-  return {
-    voteUp: postId => dispatch(voteUp(postId)),
-    voteDown: postId => dispatch(voteDown(postId)),
-    deletePost: postId => dispatch(deletePost(postId)),
-  }
-}
+const mapDispatchToProps = dispatch => ({
+  voteUp: postId => dispatch(voteUp(postId)),
+  voteDown: postId => dispatch(voteDown(postId)),
+  deletePost: postId => dispatch(deletePost(postId)),
+})
 
 export default connect(mapStateToProps, mapDispatchToProps)(Post);

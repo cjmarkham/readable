@@ -65,10 +65,8 @@ const mapStateToProps = ({ post }) => {
   };
 }
 
-const mapDispatchToProps = dispatch => {
-  return {
-    getPosts: (categoryId, sortAttr, sortDir) => dispatch(getPosts(categoryId, sortAttr, sortDir)),
-  }
-}
+const mapDispatchToProps = dispatch => ({
+  getPosts: (categoryId, sortAttr, sortDir) => dispatch(getPosts(categoryId, sortAttr, sortDir)),
+})
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Category));

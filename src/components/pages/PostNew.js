@@ -47,10 +47,8 @@ const mapStateToProps = ({ category, post }) => {
   };
 }
 
-const mapDispatchToProps = dispatch => {
-  return {
-    createPost: params => dispatch(createPost(params)),
-  }
-}
+const mapDispatchToProps = dispatch => ({
+  createPost: params => dispatch(createPost(params)),
+})
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(PostNew));

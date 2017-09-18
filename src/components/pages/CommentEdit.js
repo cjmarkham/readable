@@ -45,11 +45,9 @@ const mapStateToProps = ({ comment }) => {
   };
 }
 
-const mapDispatchToProps = dispatch => {
-  return {
-    getComment: commentId => dispatch(getComment(commentId)),
-    editComment: (commentId, params) => dispatch(editComment(commentId, params)),
-  }
-}
+const mapDispatchToProps = dispatch => ({
+  getComment: commentId => dispatch(getComment(commentId)),
+  editComment: (commentId, params) => dispatch(editComment(commentId, params)),
+})
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(CommentEdit));

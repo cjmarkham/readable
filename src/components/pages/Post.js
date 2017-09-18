@@ -97,19 +97,17 @@ const mapStateToProps = ({ post, comment }) => {
   };
 }
 
-const mapDispatchToProps = dispatch => {
-  return {
-    getPost: postId => dispatch(getPost(postId)),
-    deletePost: postId => dispatch(deletePost(postId)),
-    getComments: (postId, sortAttr, sortDir) => dispatch(getComments(postId, sortAttr, sortDir)),
-    voteUp: postId => {
-      dispatch(voteUp(postId))
-    },
-    voteDown: postId => {
-      dispatch(voteDown(postId))
-    },
-    createComment: data => dispatch(createComment(data)),
-  }
-}
+const mapDispatchToProps = dispatch => ({
+  getPost: postId => dispatch(getPost(postId)),
+  deletePost: postId => dispatch(deletePost(postId)),
+  getComments: (postId, sortAttr, sortDir) => dispatch(getComments(postId, sortAttr, sortDir)),
+  voteUp: postId => {
+    dispatch(voteUp(postId))
+  },
+  voteDown: postId => {
+    dispatch(voteDown(postId))
+  },
+  createComment: data => dispatch(createComment(data)),
+})
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Post));
