@@ -12,7 +12,7 @@ const Post = props => {
     <li className="row">
       <div className="col-md-10">
         <h4>
-          <Link to={`/posts/${post.id}`}>
+          <Link to={`/${post.category}/${post.id}`}>
             { post.title }
           </Link>
         </h4>

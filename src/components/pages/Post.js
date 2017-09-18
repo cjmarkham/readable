@@ -34,7 +34,7 @@ class Post extends React.Component {
             <h4>
               { post.title }
               <small>
-                <Link to={`/posts/${post.id}/edit`} className="btn btn-xs btn-warning">
+                <Link to={`/${post.category}/${post.id}/edit`} className="btn btn-xs btn-warning">
                   Edit
                 </Link>
                 &nbsp;

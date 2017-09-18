@@ -54,7 +54,7 @@ class App extends React.Component {
                   <Route exact path="/posts/new" component={PostNew} />
                   <Route exact path="/posts/:postId/edit" component={PostEdit} />
                   <Route exact path="/comments/:commentId/edit" component={CommentEdit} />
-                  <Route path="/posts/:postId" component={Post} />
+                  <Route path="/:categoryId/:postId" component={Post} />
                   <Route render={() => (
                     <p>Four oh Four</p>
                   )} />
