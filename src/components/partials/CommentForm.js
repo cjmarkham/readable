@@ -19,7 +19,7 @@ class CommentForm extends React.Component {
 
   render () {
     return (
-      <form onSubmit={e => this.onSubmit(e)}>
+      <form onSubmit={this.onSubmit}>
         <div className="form-group">
           <label>Author</label>
           <input
