@@ -39,16 +39,9 @@ export const deletedPost = postId => ({
 });
 
 export const getPosts = (categoryId, sortAttr, sortDir) => dispatch => {
-  if ( ! sortAttr) {
-    sortAttr = 'voteScore';
-  }
-  if ( ! sortDir) {
-    sortDir = 'desc';
-  }
-  let sort = sortAttr;
-  if (sortDir === 'desc') {
-    sort = `-${sort}`;
-  }
+  let sort = ! sortAttr ? 'voteScore' : sortAttr;
+  sort = ! sortDir || sortDir === 'desc' ? `-${sort}` : sort;
+
   API.getPosts(categoryId)
      .then(posts => dispatch(gotPosts(posts.sort(sortBy(sort)))))
 }
