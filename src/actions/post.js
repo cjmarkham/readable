@@ -47,12 +47,15 @@ export const getPosts = (categoryId, sortAttr, sortDir) => dispatch => {
 }
 
 export const voteUp = postId => dispatch => (
-  API.votePost(postId, 'upVote')
-     .then(post => dispatch(votedPost(post)))
+  vote(postId, 'upVote', dispatch)
 )
 
 export const voteDown = postId => dispatch => (
-  API.votePost(postId, 'downVote')
+  vote(postId, 'downVote', dispatch)
+)
+
+const vote = (postId, upOrDown, dispatch) => (
+  API.votePost(postId, upOrDown)
      .then(post => dispatch(votedPost(post)))
 )
 
