@@ -3,16 +3,17 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 import { createPost } from '../../actions/post';
 import PostForm from '../partials/PostForm';
+import moment from 'moment';
 
 class PostNew extends React.Component {
   createPost (data) {
     this.props.createPost({
-      id: new Date().getTime(),
+      id: moment().unix(),
       title: data.title,
       body: data.body,
       author: data.author,
       category: data.category,
-      timestamp: new Date().getTime(),
+      timestamp: moment().unix(),
     });
   }
 

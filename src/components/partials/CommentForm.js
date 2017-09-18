@@ -1,11 +1,12 @@
 import React from 'react';
+import moment from 'moment';
 
 class CommentForm extends React.Component {
   onSubmit (e) {
     e.preventDefault();
 
     const params = {
-      id: new Date().getTime(),
+      id: moment().unix(),
       body: this.body.value,
       author: this.author.value,
       parentId: this.props.parentId,
