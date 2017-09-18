@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 import { editComment, getComment } from '../../actions/comment';
 import CommentForm from '../partials/CommentForm';
+import Loading from '../partials/Loading';
 
 class CommentEdit extends React.Component {
   componentDidMount () {
@@ -23,7 +24,7 @@ class CommentEdit extends React.Component {
 
   render () {
     if ( ! this.props.comment) {
-      return <p>Loading</p>;
+      return <Loading />;
     }
 
     return (

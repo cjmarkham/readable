@@ -4,6 +4,7 @@ import { withRouter } from 'react-router';
 import { createPost } from '../../actions/post';
 import PostForm from '../partials/PostForm';
 import moment from 'moment';
+import Loading from '../partials/Loading';
 
 class PostNew extends React.Component {
   createPost (data) {
@@ -25,7 +26,7 @@ class PostNew extends React.Component {
 
   render () {
     if ( ! this.props.categories) {
-      return <p>Loading</p>;
+      return <Loading />;
     }
 
     return (

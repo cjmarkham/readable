@@ -5,6 +5,7 @@ import { withRouter } from 'react-router';
 import { Link } from 'react-router-dom';
 import Post from '../partials/Post';
 import Sorting from '../partials/Sorting';
+import Loading from '../partials/Loading';
 
 class Category extends React.Component {
   componentWillReceiveProps (props) {
@@ -26,7 +27,7 @@ class Category extends React.Component {
     const { posts } = this.props;
 
     if ( ! posts) {
-      return <p>Loading</p>;
+      return <Loading />;
     }
 
     if (posts.error) {

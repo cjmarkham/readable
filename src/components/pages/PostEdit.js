@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 import { editPost, getPost } from '../../actions/post';
 import PostForm from '../partials/PostForm';
+import Loading from '../partials/Loading';
 
 class PostEdit extends React.Component {
   componentDidMount () {
@@ -26,7 +27,7 @@ class PostEdit extends React.Component {
 
   render () {
     if ( ! this.props.categories || ! this.props.post) {
-      return <p>Loading</p>;
+      return <Loading />;
     }
 
     return (

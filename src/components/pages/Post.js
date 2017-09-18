@@ -10,6 +10,7 @@ import Comment from '../partials/Comment';
 import { Link } from 'react-router-dom';
 import Sorting from '../partials/Sorting';
 import CommentForm from '../partials/CommentForm';
+import Loading from '../partials/Loading';
 
 class Post extends React.Component {
   componentDidMount () {
@@ -23,7 +24,7 @@ class Post extends React.Component {
     const { post, comments } = this.props;
 
     if ( ! post || ! comments) {
-      return <p>Loading</p>;
+      return <Loading />;
     }
 
     return (
